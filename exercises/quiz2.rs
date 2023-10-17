@@ -44,11 +44,11 @@ mod my_module {
                     output.push(string.trim().to_string());
                 }
                 Command::Append(usize) => {
-                    let mut ans = String::new();
+                    let mut str = string.clone();
                     for i in 0..*usize {
-                        ans += &string.clone();
+                        str.push_str("bar");
                     }
-                    output.push(format!("{}bar", ans));
+                    output.push(str.to_string());
 
                 }
             }
@@ -60,7 +60,7 @@ mod my_module {
 #[cfg(test)]
 mod tests {
     // TODO: What do we need to import to have `transformer` in scope?
-    use my_module::transformer;
+    use super::my_module::*;
     use super::Command;
 
     #[test]

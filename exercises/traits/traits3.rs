@@ -9,10 +9,12 @@
 // hint.
 
 
-pub trait Licensed {
-    fn licensing_info(&self) -> String;
-}
 
+pub trait Licensed {
+    fn licensing_info(&self) -> String {
+        String::from("Some information")
+    }
+}
 struct SomeSoftware {
     version_number: i32,
 }
@@ -24,11 +26,6 @@ struct OtherSoftware {
 impl Licensed for SomeSoftware {} // Don't edit this line
 impl Licensed for OtherSoftware {} // Don't edit this line
 
-pub trait Licensed {
-    fn licensing_info(&self) -> String {
-        String::from("Some infomation")
-    }
-}
 
 #[cfg(test)]
 mod tests {

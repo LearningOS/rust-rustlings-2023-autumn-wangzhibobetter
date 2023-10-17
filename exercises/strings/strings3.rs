@@ -6,16 +6,17 @@
 
 fn trim_me(input: &str) -> String {
     // TODO: Remove whitespace from both ends of a string!
-    input.trim().to_string()
+    let mut trim_input = input.trim();
+    String::from(trim_input)
 }
 
 fn compose_me(input: &str) -> String {
-    // TODO: Add " world!" to the string! There's multiple ways to do this!
-    format!("{} world", input)
-
+    // TODO: Add " worl""d!" to the string! There's multiple ways to do this!
+    input.to_owned() + " world!"
+}
 fn replace_me(input: &str) -> String {
     // TODO: Replace "cars" in the string with "balloons"!
-    input.replace("cars", "balloooms")
+    input.replace("cars", "balloons")
 }
 
 #[cfg(test)]
